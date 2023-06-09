@@ -4,27 +4,22 @@ package lab8p2_carlosespinal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class ThreadRegistrar extends Thread{
+
+public class ThreadArtists extends Thread{
     private JDialog jd;
-    JFrame jf;
+    private JDialog jd2;
     private int seconds = 0;
     private boolean Alive = true;
-
-    public ThreadRegistrar() {
-    }
-
-    public ThreadRegistrar(JDialog jd) {
-        this.jd = jd;
-    }
-
     
     
-    public ThreadRegistrar(JDialog jd, JFrame jf) {
+    public ThreadArtists() {
+    }
+
+    public ThreadArtists(JDialog jd, JDialog jd2) {
         this.jd = jd;
-        this.jf = jf;
+        this.jd2 = jd2;
     }
 
     public JDialog getJd() {
@@ -34,28 +29,7 @@ public class ThreadRegistrar extends Thread{
     public void setJd(JDialog jd) {
         this.jd = jd;
     }
-
-    public int getSeconds() {
-        return seconds;
-    }
-
-    public void setSeconds(int seconds) {
-        this.seconds = seconds;
-    }
-
-    public JFrame getJf() {
-        return jf;
-    }
-
-    public void setJf(JFrame jf) {
-        this.jf = jf;
-    }
     
-
-    @Override
-    public String toString() {
-        return "ThreadRegistrar{" + "jd=" + jd + ", seconds=" + seconds + '}';
-    }
     
     @Override
     public void run(){
@@ -66,9 +40,10 @@ public class ThreadRegistrar extends Thread{
             } else if(seconds == 5000){
                 jd.setEnabled(true);
                 Alive = false;
-                JOptionPane.showMessageDialog(jd , "Usuario registrado correctamente!");
+                JOptionPane.showMessageDialog(jd , "Artista registrado correctamente!");
                 jd.setVisible(false);
-                jf.setVisible(true);
+                jd2.setVisible(true);
+                
                 break;
 
             }
@@ -80,7 +55,5 @@ public class ThreadRegistrar extends Thread{
             
         }
     }
-    
-    
     
 }

@@ -651,8 +651,26 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void AcreateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AcreateMouseClicked
         // TODO add your handling code here:
+            String au = Ausername.getText();
+            String ap = Apassword.getText();
+            String ano = Aname.getText();
+            int anum = Integer.parseInt(Aedad.getText());
+            String gend = Agenero.getText();
         
+        if (isgroup == false) {
+            artists.add(new Solistas(anum, au, ap, ano, gend));
+        } else{
+            artists.add(new Bandas(anum, au, ap, ano, gend));
+        }
         
+        ThreadArtists tr = new ThreadArtists(ArtistC,JDAdmin);
+        tr.start();
+        
+        Ausername.setText("");
+        Apassword.setText("");
+        Aname.setText("");
+        Aedad.setText("");
+        Agenero.setText("");
         
     }//GEN-LAST:event_AcreateMouseClicked
 
@@ -665,6 +683,8 @@ public class MainFrame extends javax.swing.JFrame {
         ArtistC.setModal(true);
         ArtistC.setVisible(true);
         numerocancer.setText("Edad");
+        
+        isgroup = false;
     }//GEN-LAST:event_CSoloMouseClicked
 
     private void CGrupoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CGrupoMouseClicked
@@ -676,6 +696,8 @@ public class MainFrame extends javax.swing.JFrame {
         ArtistC.setModal(true);
         ArtistC.setVisible(true);
         numerocancer.setText("N. Integrantes");
+        
+        isgroup = true;
     }//GEN-LAST:event_CGrupoMouseClicked
 
     /**
@@ -713,7 +735,9 @@ public class MainFrame extends javax.swing.JFrame {
         });
     }
     boolean admin = false;
+    boolean isgroup = false;
     ArrayList<Usuario> usuarios = new ArrayList();
+    ArrayList<Artista> artists = new ArrayList();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Acreate;
