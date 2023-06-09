@@ -4,6 +4,10 @@
  */
 package lab8p2_carlosespinal;
 
+import com.sun.jdi.ThreadReference;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author cespi
@@ -43,10 +47,10 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        UName = new javax.swing.JTextField();
+        Upassword = new javax.swing.JTextField();
+        Uage = new javax.swing.JTextField();
+        Uname2 = new javax.swing.JTextField();
         Regbtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -174,19 +178,19 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Uname2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Uage, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Upassword, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(UName, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(387, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -201,19 +205,19 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(UName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                    .addComponent(Upassword, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                    .addComponent(Uage, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                    .addComponent(Uname2, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                 .addGap(151, 151, 151)
                 .addComponent(Regbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
@@ -327,6 +331,24 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void RegbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegbtnMouseClicked
         // TODO add your handling code here:
+        String Un = UName.getText();
+        String Up = Upassword.getText();
+        int Ua = Integer.parseInt(Uage.getText());
+        String Un2 = Uname2.getText();
+        
+        usuarios.add(new Usuario(Un, Un2, Un2, Ua));
+        Register.setEnabled(false);
+        ThreadRegistrar tr = new ThreadRegistrar(Register,this);
+        tr.start();
+        
+        UName.setText("");
+        Upassword.setText("");
+        Uage.setText("");
+        Uname2.setText("");
+        
+        
+        
+        
         
     }//GEN-LAST:event_RegbtnMouseClicked
 
@@ -384,12 +406,18 @@ public class MainFrame extends javax.swing.JFrame {
         });
     }
 
+    ArrayList<Usuario> usuarios = new ArrayList();
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog Login;
     private javax.swing.JButton LoginDialogBtn;
     private javax.swing.JButton Regbtn;
     private javax.swing.JDialog Register;
     private javax.swing.JButton RegisterDialogBtn;
+    private javax.swing.JTextField UName;
+    private javax.swing.JTextField Uage;
+    private javax.swing.JTextField Uname2;
+    private javax.swing.JTextField Upassword;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -412,9 +440,5 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
