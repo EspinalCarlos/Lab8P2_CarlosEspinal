@@ -3,25 +3,25 @@ package lab8p2_carlosespinal;
 
 import java.util.ArrayList;
 
+public class Bandas extends Artista{
+    private int NIntegrantes;
 
-public class Solistas extends Artista{
-    private int edad;
-
-    public Solistas() {
+    public Bandas() {
         super();
+        
     }
 
-    public Solistas(int edad, String Username, String Password, String Name, String GeneroMusical) {
+    public Bandas(int NIntegrantes, String Username, String Password, String Name, String GeneroMusical) {
         super(Username, Password, Name, GeneroMusical);
-        this.edad = edad;
+        this.NIntegrantes = NIntegrantes;
     }
 
-    public int getEdad() {
-        return edad;
+    public int getNIntegrantes() {
+        return NIntegrantes;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setNIntegrantes(int NIntegrantes) {
+        this.NIntegrantes = NIntegrantes;
     }
 
     public String getUsername() {
@@ -66,11 +66,8 @@ public class Solistas extends Artista{
 
     @Override
     public String toString() {
-        return super.toString()+"Solistas{" + "edad=" + edad + '}';
+        return super.toString()+"Bandas{" + "NIntegrantes=" + NIntegrantes + '}';
     }
-    
-    
-    
     
     
     
