@@ -64,6 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         Cevent = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
+        logoffA = new javax.swing.JButton();
         ArtistC = new javax.swing.JDialog();
         jPanel12 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
@@ -95,17 +96,28 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         CEventobtn = new javax.swing.JButton();
-        jDialog1 = new javax.swing.JDialog();
+        CancionC = new javax.swing.JDialog();
         jPanel20 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jSpinner1 = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
+        JDArtist = new javax.swing.JDialog();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        accesscancionc = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -364,6 +376,16 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 12)); // NOI18N
         jLabel18.setText("Crear Grupo");
 
+        logoffA.setBackground(new java.awt.Color(255, 0, 0));
+        logoffA.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        logoffA.setForeground(new java.awt.Color(255, 255, 255));
+        logoffA.setText("Cerrar Sesion");
+        logoffA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoffAMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
@@ -390,6 +412,10 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(99, 99, 99)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(161, 161, 161))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoffA)
+                .addGap(25, 25, 25))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,7 +430,9 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(jLabel12)
                     .addComponent(jLabel18))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addComponent(logoffA, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         JDAdmin.getContentPane().add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 750, 450));
@@ -615,24 +643,31 @@ public class MainFrame extends javax.swing.JFrame {
 
         EventC.getContentPane().add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 720, 450));
 
-        jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        CancionC.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jDialog1.getContentPane().add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        CancionC.getContentPane().add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel21.setBackground(new java.awt.Color(0, 255, 51));
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab8p2_carlosespinal/Spotify_Logo_RGB_White_2_222x80.png"))); // NOI18N
 
         jLabel27.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("powered by");
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel28.setText("Crear Cancion");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
-                .addContainerGap(489, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 247, Short.MAX_VALUE)
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -641,14 +676,19 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel27)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel27))))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jDialog1.getContentPane().add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
+        CancionC.getContentPane().add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
         jPanel22.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -707,7 +747,101 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(115, Short.MAX_VALUE))
         );
 
-        jDialog1.getContentPane().add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 800, 450));
+        CancionC.getContentPane().add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 800, 450));
+
+        JDArtist.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel24.setBackground(new java.awt.Color(0, 255, 51));
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel29.setText("Bienvenido: Placeholder");
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab8p2_carlosespinal/Spotify_Logo_RGB_White_2_222x80.png"))); // NOI18N
+        jLabel30.setText("jLabel30");
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel31.setText("powered by");
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        jPanel23.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel25.setBackground(new java.awt.Color(0, 0, 0));
+
+        accesscancionc.setBackground(new java.awt.Color(102, 102, 102));
+        accesscancionc.setText("a");
+        accesscancionc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                accesscancioncMouseClicked(evt);
+            }
+        });
+
+        jLabel32.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("CREAR NUEVA CANCION");
+
+        jButton4.setBackground(new java.awt.Color(255, 0, 0));
+        jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Log Off");
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addContainerGap(225, Short.MAX_VALUE)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                        .addComponent(accesscancionc, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(217, 217, 217))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(234, 234, 234))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                        .addComponent(jButton4)
+                        .addGap(45, 45, 45))))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(accesscancionc, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(31, 31, 31))
+        );
+
+        jPanel23.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 800, 450));
+
+        JDArtist.getContentPane().add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 550));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -879,10 +1013,13 @@ public class MainFrame extends javax.swing.JFrame {
                 currentlyin = artist;
                 allowA = true;
                 JOptionPane.showMessageDialog(Login, "Iniciando sesion como artista "+ artist.getName());
+                Login.setVisible(false);
             }
         }
         
         if (allow == true) {
+            
+ 
   
         } else if(admin == true){
         Login.setVisible(false);
@@ -891,6 +1028,11 @@ public class MainFrame extends javax.swing.JFrame {
         JDAdmin.setModal(true);
         JDAdmin.setVisible(true);
         } else if(allowA == true){
+            Login.setVisible(false);
+            JDArtist.pack();
+            JDArtist.setLocationRelativeTo(this);
+            JDArtist.setModal(true);
+            JDArtist.setVisible(true);
             
         } else{
             JOptionPane.showMessageDialog(Login, "Error al iniciar sesion:\nVerifique que haya escrito bien los datos");
@@ -979,6 +1121,17 @@ public class MainFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void logoffAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoffAMouseClicked
+        // TODO add your handling code here:
+        JDAdmin.setVisible(false);
+        this.setVisible(true);
+        admin = false;
+    }//GEN-LAST:event_logoffAMouseClicked
+
+    private void accesscancioncMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accesscancioncMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_accesscancioncMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1030,6 +1183,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton CEventobtn;
     private javax.swing.JButton CGrupo;
     private javax.swing.JButton CSolo;
+    private javax.swing.JDialog CancionC;
     private javax.swing.JButton Cevent;
     private javax.swing.JSpinner Ecap;
     private javax.swing.JTextField Ecity;
@@ -1037,6 +1191,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField Eplace;
     private javax.swing.JDialog EventC;
     private javax.swing.JDialog JDAdmin;
+    private javax.swing.JDialog JDArtist;
     private javax.swing.JDialog Login;
     private javax.swing.JButton LoginDialogBtn;
     private javax.swing.JButton Regbtn;
@@ -1046,9 +1201,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField Uage;
     private javax.swing.JTextField Uname2;
     private javax.swing.JTextField Upassword;
+    private javax.swing.JButton accesscancionc;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JDialog jDialog1;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1069,7 +1225,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1091,6 +1252,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1101,6 +1265,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton logoffA;
     private javax.swing.JTextField lp;
     private javax.swing.JTextField lun;
     private javax.swing.JLabel numerocancer;
