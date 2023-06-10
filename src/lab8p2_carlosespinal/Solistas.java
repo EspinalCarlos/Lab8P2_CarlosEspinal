@@ -1,10 +1,11 @@
 
 package lab8p2_carlosespinal;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Solistas extends Artista{
+public class Solistas extends Artista implements Serializable{
     private int edad;
 
     public Solistas() {

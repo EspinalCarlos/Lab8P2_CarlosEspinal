@@ -1,10 +1,11 @@
 
 package lab8p2_carlosespinal;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Artista {
+public class Artista implements Serializable{
     protected String Username;
     protected String Password;
     protected String Name;

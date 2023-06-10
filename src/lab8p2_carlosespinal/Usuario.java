@@ -1,10 +1,11 @@
 
 package lab8p2_carlosespinal;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Usuario {
+public class Usuario implements Serializable{
     private String Username;
     private String Password;
     private String Name;

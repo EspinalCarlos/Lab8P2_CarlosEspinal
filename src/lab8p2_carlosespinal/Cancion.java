@@ -1,7 +1,9 @@
 
 package lab8p2_carlosespinal;
 
-public class Cancion {
+import java.io.Serializable;
+
+public class Cancion implements Serializable{
     private String Nombre;
     private int Duracion;
 

@@ -1,13 +1,14 @@
 
 package lab8p2_carlosespinal;
 
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class ThreadRegistrar extends Thread{
+public class ThreadRegistrar extends Thread implements Serializable{
     private JDialog jd;
     JFrame jf;
     private int seconds = 0;

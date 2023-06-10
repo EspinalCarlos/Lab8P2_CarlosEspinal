@@ -1,9 +1,10 @@
 
 package lab8p2_carlosespinal;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Bandas extends Artista{
+public class Bandas extends Artista implements Serializable{
     private int NIntegrantes;
 
     public Bandas() {
